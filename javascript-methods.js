@@ -52,8 +52,29 @@ console.log(map2);
 
 // FILTER //
 Array.prototype.myFilter = function (callbackFn) {
-  // Place your code here.
+  let myArray = [];
+
+  for (let i = 0; i < this.length; i++) { // "this" keyword refers to the array being called.
+    if (this[i] === undefined) continue;
+    // callbackFn can take up to 3 input parameters:
+    // element
+    // element, index
+    // element, index, array
+    if (callbackFn(this[i], i, this)) // callbackFn is 
+      myArray.push(this[i]);
+  }
+
+  return myArray;
 };
+
+// Filter test
+/*
+const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
+
+const result = words.myFilter(word => word.length > 6);
+
+console.log(result);
+*/
 
 // SOME //
 Array.prototype.mySome = function (callbackFn) {
