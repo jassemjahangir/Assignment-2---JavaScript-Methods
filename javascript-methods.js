@@ -42,7 +42,7 @@ const map2 = myArray1.myMap((x, i, ar) => {
   if (i % 2 == 1) {
     return x * 100;
   } else {
-    return x
+    return x;
   }
 })
 console.log(map2);
