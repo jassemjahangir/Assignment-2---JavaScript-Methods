@@ -143,6 +143,7 @@ Array.prototype.myReduce = function (callbackFn) {
   return value;
 };
 
+/*
 const array1 = [1, 2, 3, 4];
 
 // 0 + 1 + 2 + 3 + 4
@@ -154,11 +155,33 @@ const sumWithInitial = array1.myReduce(
 
 console.log(sumWithInitial);
 // Expected output: 8
+*/
 
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement) {
   // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === undefined) continue;
+    if (this[i] === searchElement)
+      return true;
+
+  }
+  return false;
 };
+
+
+const array1 = [1, 2, 3];
+
+console.log(array1.myIncludes(2));
+// Expected output: true
+
+const pets = ['cat', 'dog', 'bat'];
+
+console.log(pets.myIncludes('cat'));
+// Expected output: true
+
+console.log(pets.myIncludes('at'));
+// Expected output: false
 
 // INDEXOF //
 Array.prototype.myIndexOf = function (searchElement) {
