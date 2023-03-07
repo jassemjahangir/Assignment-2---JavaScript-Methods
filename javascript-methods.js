@@ -230,24 +230,24 @@ console.log(animals.myLastIndexOf('Dodo1'));
 Object.myKeys = function (object) {
 
   let keys = []
-  for (key in object) {
+  for (let key in object) {
     keys.push(key)
   }
 
   return keys;
 
 };
-/*
+
 // VALUES //
 Object.myValues = function (object) {
   let values = []
-  for (key in object) {
+  for (let key in object) {
     values.push(object[key]);
   }
 
   return values;
 };
-
+/*
 let obj = {
   value: 1,
   status: true,
