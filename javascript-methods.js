@@ -169,7 +169,7 @@ Array.prototype.myIncludes = function (searchElement) {
   return false;
 };
 
-
+/*
 const array1 = [1, 2, 3];
 
 console.log(array1.myIncludes(2));
@@ -182,11 +182,26 @@ console.log(pets.myIncludes('cat'));
 
 console.log(pets.myIncludes('at'));
 // Expected output: false
+*/
 
 // INDEXOF //
 Array.prototype.myIndexOf = function (searchElement) {
-  // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === undefined) continue;
+    if (this[i] === searchElement)
+      return i;
+
+  }
+  return -1;
 };
+
+const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
+
+console.log(beasts.myIndexOf('bison'));
+// Expected output: 1
+
+console.log(beasts.myIndexOf('giraffe'));
+// Expected output: -1
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function (searchElement) {
