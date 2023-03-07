@@ -120,18 +120,40 @@ Array.prototype.myEvery = function (callbackFn) {
   return true;
 };
 
+/*
 const isBelowThreshold = (currentValue) => currentValue < 40;
 
 const array1 = [1, 30, 59, 29, 10, 13];
 
 console.log(array1.myEvery(isBelowThreshold));
 // Expected output: true
-
+*/
 
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
-  // Place your code here.
+  let value = 0;
+  let accumulator = 0;
+  for (let i = 0; i < this.length; i++) { // "this" keyword refers to the array being called.
+
+    if (this[i] === undefined) continue;
+    // callbackFn can take up to 4 input parameters:
+
+    value += callbackFn(accumulator, this[i], i, this); // callbackFn is 
+  }
+  return value;
 };
+
+const array1 = [1, 2, 3, 4];
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.myReduce(
+  (accumulator, currentValue) => accumulator + currentValue,
+  initialValue
+);
+
+console.log(sumWithInitial);
+// Expected output: 8
 
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement) {
