@@ -237,7 +237,7 @@ Object.myKeys = function (object) {
   return keys;
 
 };
-
+/*
 // VALUES //
 Object.myValues = function (object) {
   let values = []
@@ -262,3 +262,4 @@ const object1 = {
 
 console.log(Object.myKeys(object1));
 console.log(Object.myValues(object1));
+*/
