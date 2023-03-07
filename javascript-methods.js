@@ -146,6 +146,7 @@ Array.prototype.myReduce = function (callbackFn) {
 
 const array1 = [1, 2, 3, 4];
 
+/*
 // 0 + 1 + 2 + 3 + 4
 const initialValue = array1[0];
 const sumWithInitial = array1.myReduce(
@@ -163,7 +164,7 @@ console.log(sumWithInitial);
 
 console.log(multWithInitial);
 // Expected output: 24
-
+*/
 
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement) {
