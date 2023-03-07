@@ -228,10 +228,37 @@ console.log(animals.myLastIndexOf('Dodo1'));
 */
 // KEYS //
 Object.myKeys = function (object) {
-  // Place your code here.
+
+  let keys = []
+  for (key in object) {
+    keys.push(key)
+  }
+
+  return keys;
+
 };
 
 // VALUES //
 Object.myValues = function (object) {
-  // Place your code here.
+  let values = []
+  for (key in object) {
+    values.push(object[key]);
+  }
+
+  return values;
 };
+
+let obj = {
+  value: 1,
+  status: true,
+  name: "hello"
+};
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.myKeys(object1));
+console.log(Object.myValues(object1));
