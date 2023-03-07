@@ -130,41 +130,53 @@ console.log(array1.myEvery(isBelowThreshold));
 */
 
 // REDUCE //
-Array.prototype.myReduce = function (callbackFn) {
-  let value = 0;
-  let accumulator = 0;
+Array.prototype.myReduce = function (callbackFn, accumulator) {
+  // callbackFN = (accumulator, currentValue) => accumulator + currentValue
+  // accumulator = -10
+  // [1, 2, 3, 4];
+
   for (let i = 0; i < this.length; i++) { // "this" keyword refers to the array being called.
+    if (accumulator === undefined && i === 0) {
+      accumulator = this[0];
+      continue;
+    }
 
     if (this[i] === undefined) continue;
     // callbackFn can take up to 4 input parameters:
 
-    value += callbackFn(accumulator, this[i], i, this); // callbackFn is 
+    accumulator = callbackFn(accumulator, this[i], i, this); // callbackFn is 
+    //console.log(i, accumulator)
   }
-  return value;
+  return accumulator;
 };
 
 
 const array1 = [1, 2, 3, 4];
 
-/*
+
 // 0 + 1 + 2 + 3 + 4
-const initialValue = array1[0];
-const sumWithInitial = array1.myReduce(
-  (accumulator, currentValue) => accumulator + currentValue,
-  initialValue
-);
+// const initialValue = array1[0];
+//const sumWithInitial = array1.myReduce(
+// (accumulator, currentValue) => accumulator + currentValue, -10   // 2 params (accumulator, currentValue) => accumulator + currentValue, -10
+// );
 
-const multWithInitial = array1.reduce(
-  (accumulator, currentValue) => accumulator * currentValue,
-  initialValue
-);
+//const sum2 = array1.reduce((acc, curVal) => acc + curVal, 1)
+//console.log(sum2)
 
-console.log(sumWithInitial);
+// const multWithInitial = array1.myReduce(
+//   (accumulator, currentValue) => accumulator * currentValue
+// );
+
+//const sub = array1.myReduce(
+// (accumulator, currentValue) => accumulator - currentValue
+//);
+//console.log("sub", sub)
+// console.log(sumWithInitial);
 // Expected output: 8
 
-console.log(multWithInitial);
+// console.log(multWithInitial);
 // Expected output: 24
-*/
+
 
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement) {
