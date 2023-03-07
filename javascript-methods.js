@@ -93,6 +93,7 @@ Array.prototype.mySome = function (callbackFn) {
 
 };
 
+/*
 const array = [1, 2, 3, 4, 5];
 const array1 = [1, 1, 1, 1, 1];
 // Checks whether an element is even
@@ -101,11 +102,31 @@ const even = (element) => element % 2 === 0;
 console.log(array.mySome(even));
 // Expected output: true
 console.log(array1.mySome(even));
+*/
 
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
   // Place your code here.
+  for (let i = 0; i < this.length; i++) { // "this" keyword refers to the array being called.
+    if (this[i] === undefined) continue;
+    // callbackFn can take up to 3 input parameters:
+    // element
+    // element, index
+    // element, index, array
+    if (!(callbackFn(this[i], i, this))) // callbackFn is 
+      return false;
+  }
+
+  return true;
 };
+
+const isBelowThreshold = (currentValue) => currentValue < 40;
+
+const array1 = [1, 30, 59, 29, 10, 13];
+
+console.log(array1.myEvery(isBelowThreshold));
+// Expected output: true
+
 
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
