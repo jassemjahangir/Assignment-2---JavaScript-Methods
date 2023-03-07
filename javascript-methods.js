@@ -151,7 +151,7 @@ Array.prototype.myReduce = function (callbackFn, accumulator) {
 };
 
 
-const array1 = [1, 2, 3, 4];
+// const array1 = [1, 2, 3, 4];
 
 
 // 0 + 1 + 2 + 3 + 4
