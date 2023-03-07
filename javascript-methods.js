@@ -195,6 +195,7 @@ Array.prototype.myIndexOf = function (searchElement) {
   return -1;
 };
 
+/*
 const beasts = ['ant', 'bison', 'camel', 'duck', 'bison'];
 
 console.log(beasts.myIndexOf('bison'));
@@ -202,12 +203,29 @@ console.log(beasts.myIndexOf('bison'));
 
 console.log(beasts.myIndexOf('giraffe'));
 // Expected output: -1
+*/
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function (searchElement) {
-  // Place your code here.
-};
+  for (let i = this.length; i >= 0; i--) {
+    if (this[i] === undefined) continue;
+    if (this[i] === searchElement)
+      return i;
 
+  }
+  return -1;
+};
+/*
+const animals = ['Dodo1', 'Tiger', 'Penguin', 'Dodo'];
+
+console.log(animals.myLastIndexOf('Dodo'));
+// Expected output: 3
+
+console.log(animals.myLastIndexOf('Tiger'));
+// Expected output: 1
+
+console.log(animals.myLastIndexOf('Dodo1'));
+*/
 // KEYS //
 Object.myKeys = function (object) {
   // Place your code here.
