@@ -143,19 +143,27 @@ Array.prototype.myReduce = function (callbackFn) {
   return value;
 };
 
-/*
+
 const array1 = [1, 2, 3, 4];
 
 // 0 + 1 + 2 + 3 + 4
-const initialValue = 0;
+const initialValue = array1[0];
 const sumWithInitial = array1.myReduce(
   (accumulator, currentValue) => accumulator + currentValue,
   initialValue
 );
 
+const multWithInitial = array1.reduce(
+  (accumulator, currentValue) => accumulator * currentValue,
+  initialValue
+);
+
 console.log(sumWithInitial);
 // Expected output: 8
-*/
+
+console.log(multWithInitial);
+// Expected output: 24
+
 
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement) {
