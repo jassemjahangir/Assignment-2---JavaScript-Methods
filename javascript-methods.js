@@ -235,3 +235,18 @@ Object.myKeys = function (object) {
 Object.myValues = function (object) {
   // Place your code here.
 };
+
+let obj = {
+  value: 1,
+  status: true,
+  name: "hello"
+};
+
+const object1 = {
+  a: 'somestring',
+  b: 42,
+  c: false
+};
+
+console.log(Object.keys(object1));
+console.log(Object.values(object1));
